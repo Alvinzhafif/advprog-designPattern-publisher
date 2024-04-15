@@ -77,7 +77,22 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+1. #### In the Observer pattern diagram explained by the Head First Design Pattern book, Subscriber is defined as an interface. Explain based on your understanding of Observer design patterns, do we still need an interface (or trait in Rust) in this BambangShop case, or a single Model struct is enough?
+    <br>
+    I believe a single struct is enough, because currently we are only trying to implement one functionality for the subscribers. However, if somewhere on the future we are going to add different roles and functionality to the subscribers an interface or trait may be needed to ensure integrity between the roles and functionalities.
+    <br>
+    <br>
+   
+2. #### id in Program and url in Subscriber is intended to be unique. Explain based on your understanding, is using Vec (list) sufficient or using DashMap (map/dictionary) like we currently use is necessary for this case?
+   <br>
+   
+   I believe that using a `DashMap`  in the case that both ID and Url is intended to be unique. Additionally, `DashMap` is efficient in performance with `O(1)` Lookup and Insertion time for most operations and `DashMap` enforces uniqueness preventing a case of duplicates. This is a perfect fit, as we want both ID and Url to be unique in this case 
 
+3. #### When programming using Rust, we are enforced by rigorous compiler constraints to make a thread-safe program. In the case of the List of Subscribers (SUBSCRIBERS) static variable, we used the DashMap external library for thread safe HashMap. Explain based on your understanding of design patterns, do we still need DashMap or we can implement Singleton pattern instead?
+    <br>
+    
+    I believe using `DashMap` is better. In addition to the previous advantages I had mentioned, `DashMap` also has an advantage in thread safety, concurrency, and dynamic growth. While singleton also can handle thread safety, it is a bit more complex compared to `DashMap` as it is needed to manually synchronize access to the singleton instance. While `DashMap` inherently does it, ensuring multiple threads can read and write without any explicit synchronization.
+      
 #### Reflection Publisher-2
 
 #### Reflection Publisher-3
