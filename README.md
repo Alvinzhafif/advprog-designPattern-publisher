@@ -94,5 +94,17 @@ This is the place for you to write reflections:
     I believe using `DashMap` is better. In addition to the previous advantages I had mentioned, `DashMap` also has an advantage in thread safety, concurrency, and dynamic growth. While singleton also can handle thread safety, it is a bit more complex compared to `DashMap` as it is needed to manually synchronize access to the singleton instance. While `DashMap` inherently does it, ensuring multiple threads can read and write without any explicit synchronization.
       
 #### Reflection Publisher-2
+1. #### In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
+    <br>
 
+    There are a few reasons why we need to separate `service` and `repository` from each other. Two of them adheres to the `SOLID` principle that has been covered before, which is **Single Responsibility Principle** or **SRP** and **Dependency Inversion Principle** or **DIP**. By separating both `service` and `repository` from model, we can ensure that each component focuses on a single responsibility and reduces coupling between each component
+2. #### What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+    <br>
+
+    If we were only to use the model, then most likely it will violate the previous `SOLID` principle. Violating the principle may not seem much at first however, when the code progressively gets bigger and bigger, it may become progressively harder to keep track of each of the codes responsibility or worse, the code can become bloated. Additionally, it might be challenging to understand the code and implement tests if this happens.
+
+3. #### Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+    <br>
+
+    I have experience using `Postman` ever since the previous course of Platform Based Programming or **PBP**. This app certainly helps me a lot of times, one of the features i liked is the way it can show datas in a neat and readable format. Especially in our group projects, I feel the need to read data clearly to make sure that there are no incomplete or miss inputted data. Hence, that is where `Postman comes`, it can show any data whether it is in `Json` or even `Xml` format. 
 #### Reflection Publisher-3
