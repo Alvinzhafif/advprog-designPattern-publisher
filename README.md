@@ -108,3 +108,21 @@ This is the place for you to write reflections:
 
     I have experience using `Postman` ever since the previous course of Platform Based Programming or **PBP**. This app certainly helps me a lot of times, one of the features i liked is the way it can show datas in a neat and readable format. Especially in our group projects, I feel the need to read data clearly to make sure that there are no incomplete or miss inputted data. Hence, that is where `Postman comes`, it can show any data whether it is in `Json` or even `Xml` format. 
 #### Reflection Publisher-3
+
+1. #### Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+    <br>
+
+    It adheres to the Push model, every function in `notification service` uses a push model as the `publisher` will push notifications to the `subscriber` without expecting anything in return from the subscriber. The `product service` is an implementation of it as the subscriber will be sent notification from the publisher for each time the product function operation is triggered.
+
+2. #### What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+    <br>
+
+    If it were to be a Pull model, then there a few disadvantages that might happen. Such as increased network traffic, this maybe triggered when there are a lot of subscribers and they want to pull from the publisher for updates. This can also lead to latency or delays due to subscribers need to wait until the next polling interval for them to receive the updates. 
+    <br>
+    <br>
+    However there also advantages, as using a pull model can decrease the server load. In this case subscribers would only receive notification or updates when requested by them instead of it being pushed directly by the publisher. This is beneficial if the server load or space is pretty minimum. Additionally, the subscribers can maintain control of the notification load in cases where there will be a lot of notification sent by publisher. 
+
+3. #### Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+    <br>
+   
+    If we decided to drop multi-threading, each and every notification process will be executed sequentially. It may not seem much, however when there's a certain delay to one of the notification process. In a nutshell, this will make the process behavior into synchronous. Additionally, it may also cause some performance issue if there were to be a lot of subscriber updates to process, causing a delay as the notification needs to be executed one by one whilst waiting for the previous one to finish.
